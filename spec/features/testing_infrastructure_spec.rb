@@ -7,11 +7,12 @@ feature 'Testing Infrastructure' do
 end
 
 feature 'enter names' do
-  scenario 'players to fill in names in a form ' do
-    visit('/')
+  scenario 'Two players can fill in names in a form ' do
+    visit("/names")
 
-    fill_in :name, with: "Bob"
-    click_button "Create player"
-    expect(page).to have_content("Player Bob was created!")
+    fill_in :player1_name, with: "Bob"
+    fill_in :player2_name, with: "Bill"
+    click_button "Create Players"
+    expect(page).to have_content("Bob vs. Bill")
   end
 end
