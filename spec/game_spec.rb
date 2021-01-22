@@ -1,9 +1,11 @@
 require 'game'
 
 describe Game do
+  let(:player_1) { double :player}
   describe "attack" do
-    it 'knows how to attack' do
-      expect(subject).to respond_to(:attack).with(1).argument
+    it 'damages the player' do
+      expect(player_1).to receive(:receive_damage)
+      subject.attack(player_1)
     end
   end
 end
