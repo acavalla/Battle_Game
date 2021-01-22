@@ -27,5 +27,11 @@ class Battle < Sinatra::Base
     erb :attack
   end
 
+  get "/switch" do
+    @game = $game
+    @game.attack(@game.player_1)
+    erb :switch
+  end
+
   run! if app_file == $0
 end
