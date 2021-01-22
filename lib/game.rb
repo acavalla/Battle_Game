@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :player_1, :player_2, :current_turn
+  attr_reader :player_1, :player_2, :current_turn, :lose
 
   def initialize(player_1, player_2)
     @player_1 = player_1
@@ -11,6 +11,7 @@ class Game
   def attack(player)
     player.receive_damage
     switch_turns
+    lose?
   end
 
   def switch_turns
@@ -18,6 +19,11 @@ class Game
       @current_turn = player_2
     elsif current_turn == player_2
       @current_turn = player_1
+    end
+  end
+
+  def lose?
+    if player_1.hp == 0 || player_2.hp ==0
     end
   end
 end
