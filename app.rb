@@ -23,10 +23,8 @@ class Battle < Sinatra::Base
   end
 
   get "/attack" do
-    p "hello"
     @player_1 = $player_1
     @player_2 = $player_2
-    p "hi"
     @player_1.attack(@player_2)
     erb :attack
   end

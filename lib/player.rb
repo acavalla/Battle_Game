@@ -14,4 +14,4 @@ class Player
     @hp -= 10
   end
 
-endquit
+end

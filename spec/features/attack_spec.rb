@@ -9,7 +9,7 @@ feature "attack" do
   scenario "attacks reduce HP by 10" do
     sign_in_and_play
     click_button "Attack!"
-    expect(page).to have_content("Bill - Hit Points: 90")
+    expect(page).to have_content("Bill - HP:90")
   end
 
 end
