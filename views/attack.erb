@@ -1,1 +1,4 @@
-<h1> <%= @player_2_name %> has been attacked! By <%= @player_1_name %>! </h1>
+<h1> <%= @player_2.name %> has been attacked by <%= @player_1.name %>! </h1>
+
+<strong><%= @player_1.name %></strong> - Hit Points: <%= @player_1.hp %> <br />
+<strong><%= @player_2.name %></strong> - Hit Points: <%= @player_2.hp %>
