@@ -23,15 +23,16 @@ class Battle < Sinatra::Base
 
   get "/attack" do
     @game = $game
-    redirect "/lose" if @game.lose?
     @game.attack(@game.player_2)
+    redirect "/lose" if @game.lose
     erb :attack
   end
 
   get "/switch" do
     @game = $game
-    redirect "/lose" if @game.lose?
     @game.attack(@game.player_1)
+
+    redirect "/lose" if @game.lose
     erb :switch
   end
 
